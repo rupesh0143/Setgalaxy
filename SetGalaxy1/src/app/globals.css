@@ -1,0 +1,125 @@
+@import 'animate.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swiper Custom Styles */
+.testimonials-swiper .swiper-pagination {
+  bottom: 0 !important;
+  position: relative !important;
+  margin-top: 2rem;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+  background: #53a3a5;
+  opacity: 0.3;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #53a3a5;
+  transform: scale(1.2);
+}
+
+.testimonials-swiper .swiper-button-next,
+.testimonials-swiper .swiper-button-prev {
+  color: #000000;
+  width: 35px;
+  height: 35px;
+  background: rgba(83, 163, 165, 0.8);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-button-next:hover,
+.testimonials-swiper .swiper-button-prev:hover {
+  background: rgba(83, 163, 165, 0.5);
+  transform: scale(1.1);
+}
+
+.testimonials-swiper .swiper-button-next:after,
+.testimonials-swiper .swiper-button-prev:after {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Clients Swiper Styles */
+.clients-swiper .swiper-slide {
+  height: auto;
+}
+
+/* Works Swiper Styles */
+.works-swiper .swiper-pagination {
+  bottom: 0 !important;
+  position: relative !important;
+  margin-top: 2rem;
+}
+
+.works-swiper .swiper-pagination-bullet {
+  background: #53a3a5;
+  opacity: 0.3;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.works-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #53a3a5;
+  transform: scale(1.2);
+}
+
+.works-swiper .swiper-button-next,
+.works-swiper .swiper-button-prev {
+  color: #53a3a5;
+  width: 35px;
+  height: 35px;
+  background: rgba(83, 163, 165, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.works-swiper .swiper-button-next:hover,
+.works-swiper .swiper-button-prev:hover {
+  background: rgba(83, 163, 165, 0.2);
+  transform: scale(1.1);
+}
+
+.works-swiper .swiper-button-next:after,
+.works-swiper .swiper-button-prev:after {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-dark;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-colors inline-block text-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-lg font-medium transition-colors inline-block text-center;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+}
