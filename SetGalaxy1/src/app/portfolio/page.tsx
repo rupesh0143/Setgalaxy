@@ -12,52 +12,58 @@ export const metadata: Metadata = {
 export default function Portfolio() {
   const projects = [
     {
-      title: 'E-commerce Fashion Store',
-      category: 'E-commerce',
-      description: 'Modern online fashion store with advanced filtering, wishlist, and secure checkout.',
-      technologies: ['Next.js', 'Stripe', 'MongoDB', 'Tailwind CSS'],
-      icon: 'shopping',
-      metrics: { users: '10K+', conversion: '15%' }
-    },
-    {
-      title: 'Restaurant Management System',
-      category: 'Web Application',
-      description: 'Complete restaurant management solution with online ordering and table reservations.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Socket.io'],
-      icon: 'restaurant',
-      metrics: { orders: '5K+', efficiency: '40%' }
-    },
-    {
-      title: 'Corporate Business Website',
-      category: 'Corporate',
-      description: 'Professional corporate website with CMS integration and multi-language support.',
-      technologies: ['Next.js', 'Sanity CMS', 'TypeScript', 'Framer Motion'],
+      title: 'InvestAvenue',
+      category: 'Investment',
+      description: 'Modern investment platform with intuitive UI/UX design and comprehensive portfolio management.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
       icon: 'corporate',
-      metrics: { traffic: '200%', leads: '85%' }
+      metrics: { users: '5K+', growth: '120%' },
+      url: 'https://www.investavenue.com.au/'
     },
     {
-      title: 'Real Estate Platform',
-      category: 'Platform',
-      description: 'Property listing platform with advanced search, virtual tours, and agent profiles.',
-      technologies: ['React', 'Express.js', 'MySQL', 'Google Maps API'],
+      title: 'PROPWEALTH',
+      category: 'Real Estate',
+      description: 'Real estate investment platform with mobile-first design and property analytics.',
+      technologies: ['Next.js', 'Express.js', 'MySQL', 'Google Maps'],
       icon: 'home',
-      metrics: { listings: '2K+', inquiries: '60%' }
+      metrics: { listings: '2K+', inquiries: '60%' },
+      url: 'https://propwealth.com.au/'
     },
     {
-      title: 'Healthcare Portal',
+      title: 'Mediff Pharma',
       category: 'Healthcare',
-      description: 'Patient management system with appointment scheduling and telemedicine features.',
-      technologies: ['Vue.js', 'Laravel', 'MySQL', 'WebRTC'],
+      description: 'Healthcare management system with database optimization and patient portal.',
+      technologies: ['Vue.js', 'Laravel', 'MySQL', 'Bootstrap'],
       icon: 'health',
-      metrics: { patients: '1K+', satisfaction: '95%' }
+      metrics: { patients: '1K+', satisfaction: '95%' },
+      url: 'https://mediffpharma.com/'
     },
     {
-      title: 'Educational Learning Platform',
-      category: 'Education',
-      description: 'Online learning platform with video streaming, quizzes, and progress tracking.',
-      technologies: ['React', 'Django', 'PostgreSQL', 'AWS S3'],
-      icon: 'education',
-      metrics: { students: '3K+', completion: '78%' }
+      title: 'Investoraid',
+      category: 'FinTech',
+      description: 'Investment tracking dashboard with advanced analytics and market insights.',
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'Chart.js'],
+      icon: 'corporate',
+      metrics: { trades: '10K+', accuracy: '98%' },
+      url: 'https://investoraid.com.au/'
+    },
+    {
+      title: 'Printmann',
+      category: 'E-commerce',
+      description: 'Custom printing solutions with full e-commerce integration and order management.',
+      technologies: ['WordPress', 'WooCommerce', 'PHP', 'MySQL'],
+      icon: 'shopping',
+      metrics: { orders: '3K+', revenue: '150%' },
+      url: 'https://printmann.co.in/'
+    },
+    {
+      title: 'Investors Horizon',
+      category: 'Investment',
+      description: 'Professional investment advisory platform with client portal and market analysis.',
+      technologies: ['React', 'Express.js', 'MongoDB', 'Socket.io'],
+      icon: 'corporate',
+      metrics: { clients: '500+', returns: '85%' },
+      url: 'https://investorshorizon.in'
     }
   ]
 
@@ -170,14 +176,24 @@ export default function Portfolio() {
                     </div>
                     
                     <div className="flex space-x-2">
-                      <button className="flex-1 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
-                        View Details
-                      </button>
-                      <button className="p-2 border border-gray-200 rounded-lg hover:border-primary hover:text-primary transition-colors">
+                      <Link 
+                        href={project.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium text-center"
+                      >
+                        View Website
+                      </Link>
+                      <Link 
+                        href={project.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="p-2 border border-gray-200 rounded-lg hover:border-primary hover:text-primary transition-colors"
+                      >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
