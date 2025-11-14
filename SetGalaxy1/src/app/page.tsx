@@ -8,12 +8,75 @@ import WhatWeOffer from '@/components/WhatWeOffer'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ServiceIcons } from '@/components/ServiceIcons'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'SetGalaxy - Professional Web Development & Digital Solutions Company',
+  description: 'Leading web development company offering custom websites, mobile apps, digital marketing, SEO, brand development, and database administration. Transform your business with our expert digital solutions.',
+  keywords: 'web development company, custom website development, mobile app development, digital marketing services, SEO optimization, brand development, database administration, responsive web design, e-commerce development',
+  openGraph: {
+    title: 'SetGalaxy - Professional Web Development & Digital Solutions Company',
+    description: 'Leading web development company offering custom websites, mobile apps, digital marketing, SEO, brand development, and database administration.',
+    url: 'https://setgalaxy.com',
+    images: [
+      {
+        url: '/images/setgalaxy_logo.svg',
+        width: 1200,
+        height: 630,
+        alt: 'SetGalaxy - Professional Web Development Company',
+      },
+    ],
+  },
+  twitter: {
+    title: 'SetGalaxy - Professional Web Development & Digital Solutions Company',
+    description: 'Leading web development company offering custom websites, mobile apps, digital marketing, SEO, brand development, and database administration.',
+    images: ['/images/setgalaxy_logo.svg'],
+  },
+  alternates: {
+    canonical: 'https://setgalaxy.com',
+  },
+}
 
 export default function Home() {
   return (
     <>
       <Header />
       <main>
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "SetGalaxy",
+              "url": "https://setgalaxy.com",
+              "logo": "https://setgalaxy.com/images/setgalaxy_logo.svg",
+              "description": "Professional web development and digital solutions company",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IN"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "url": "https://setgalaxy.com/contact"
+              },
+              "sameAs": [
+                "https://twitter.com/setgalaxy",
+                "https://linkedin.com/company/setgalaxy"
+              ],
+              "services": [
+                "Web Development",
+                "Web Design",
+                "Digital Marketing",
+                "Brand Development",
+                "Database Administration",
+                "Planning & Consultation"
+              ]
+            })
+          }}
+        />
         {/* Hero Section */}
         <section className="relative bg-gradient-to-r from-primary to-secondary text-white min-h-screen flex items-center overflow-hidden">
           <div className="absolute inset-0 bg-[url('/images/mainbanner.jpg')] bg-cover bg-center bg-no-repeat "></div>
