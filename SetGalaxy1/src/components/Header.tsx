@@ -20,6 +20,7 @@ export default function Header() {
     { href: '/about', label: 'About' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/careers', label: 'Careers' },
+    { href: '/aftercollege', label: 'After College' },
     { href: '/contact', label: 'Contact' }
   ]
 
