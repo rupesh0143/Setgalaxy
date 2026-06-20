@@ -69,7 +69,7 @@ export default function WhatWeOffer({ showViewAllButton = true }: WhatWeOfferPro
                 alt={service.title} 
                 width={360} 
                 height={240} 
-                className='object-cover h-60 rounded-lg'
+                className='w-full object-cover h-60 rounded-lg'
               /> 
               <h3 className="text-lg sm:text-xl font-semibold my-4">{service.title}</h3>
               <p className="text-sm sm:text-base text-gray-600 mb-4">

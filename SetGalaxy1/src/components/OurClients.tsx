@@ -43,7 +43,7 @@ export default function OurClients() {
           {clients.map((client, index) => (
             <SwiperSlide key={index}>
               <div className="flex items-center justify-center p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300 wow animate__animated animate__fadeInUp h-24" data-wow-duration="1s" data-wow-delay={`${0.1 * (index + 1)}s`}>
-                <div className="w-full h-60 bg-white rounded-lg flex items-center justify-center p-2 shadow-sm">
+                <div className="w-full h-20 bg-white rounded-lg flex items-center justify-center p-2 shadow-sm">
                   <Image 
                     src={client.logo} 
                     alt={`${client.name} logo`} 

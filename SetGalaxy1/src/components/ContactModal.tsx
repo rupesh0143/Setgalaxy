@@ -34,19 +34,37 @@ export default function ContactModal({ isOpen, onClose, title = 'Get Started', p
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    console.log('Form submitted:', { ...formData, planName })
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset and close after showing success
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', message: '' })
-      setIsSubmitted(false)
-      onClose()
-    }, 2000)
+    try {
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: planName ? `Plan Inquiry: ${planName}` : 'General Inquiry',
+        message: formData.message || 'Inquiry submitted from get started modal.'
+      }
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setTimeout(() => {
+          setFormData({ name: '', email: '', phone: '', message: '' })
+          setIsSubmitted(false)
+          onClose()
+        }, 2000)
+      } else {
+        const data = await response.json()
+        alert(data.error || 'Failed to submit inquiry. Please try again.')
+      }
+    } catch (err) {
+      alert('A network error occurred. Please check your connection and try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

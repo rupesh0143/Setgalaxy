@@ -20,7 +20,7 @@ export default function Header() {
     { href: '/about', label: 'About' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/careers', label: 'Careers' },
-    { href: '/aftercollege', label: 'After College' },
+    { href: '/studentcorner', label: 'Student Corner' },
     { href: '/contact', label: 'Contact' }
   ]
 
@@ -31,34 +31,32 @@ export default function Header() {
           <Link href="/" className="flex items-center">
             <Logo />
           </Link>
-          
+
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <Link 
+              <Link
                 key={link.href}
-                href={link.href} 
-                className={`transition-colors duration-200 ${
-                  isActive(link.href) 
-                    ? 'text-primary font-semibold border-b-2 border-primary' 
+                href={link.href}
+                className={`transition-colors duration-200 ${isActive(link.href)
+                    ? 'text-primary font-semibold border-b-2 border-primary'
                     : 'text-dark hover:text-primary'
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
             ))}
           </div>
-          
-          <button 
+
+          <button
             className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <svg 
-              className={`w-6 h-6 transition-transform duration-300 ${
-                isMenuOpen ? 'rotate-90' : 'rotate-0'
-              }`} 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className={`w-6 h-6 transition-transform duration-300 ${isMenuOpen ? 'rotate-90' : 'rotate-0'
+                }`}
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               {isMenuOpen ? (
@@ -69,20 +67,18 @@ export default function Header() {
             </svg>
           </button>
         </div>
-        
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}>
+
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}>
           <div className="py-4 space-y-2 border-t border-gray-200">
             {navLinks.map((link) => (
-              <Link 
+              <Link
                 key={link.href}
-                href={link.href} 
-                className={`block py-3 px-4 rounded-md transition-all duration-200 ${
-                  isActive(link.href) 
-                    ? 'text-primary bg-primary/10 font-semibold border-l-4 border-primary' 
+                href={link.href}
+                className={`block py-3 px-4 rounded-md transition-all duration-200 ${isActive(link.href)
+                    ? 'text-primary bg-primary/10 font-semibold border-l-4 border-primary'
                     : 'text-dark hover:text-primary hover:bg-gray-50'
-                }`}
+                  }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
