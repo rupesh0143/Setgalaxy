@@ -78,10 +78,10 @@ export default function Home() {
           }}
         />
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-primary to-secondary text-white min-h-screen flex items-center overflow-hidden">
+        <section className="relative bg-gradient-to-r from-primary to-secondary text-white min-h-screen py-20 md:py-0 flex items-center overflow-hidden">
           <div className="absolute inset-0 bg-[url('/images/mainbanner.jpg')] bg-cover bg-center bg-no-repeat "></div>
           <div className="absolute inset-0  bg-gray-900/50"></div>
-          <div className="container-max text-center relative z-10">
+          <div className="container-max text-center relative z-10 px-6 sm:px-8">
             <div className="wow animate__animated animate__fadeInDown" data-wow-duration="1s">
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-2 leading-tight">
                 SetGalaxy
@@ -99,7 +99,7 @@ export default function Home() {
               </p>
             </div>
             <div className="wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.9s">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-sm mx-auto sm:max-w-none">
                 <Link href="/contact" className="btn-primary bg-white text-secondary hover:bg-gray-100 text-lg font-bold px-8 py-4 transform hover:scale-105 transition-transform">
                   Start Your Project
                 </Link>
@@ -116,7 +116,7 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <div className="container-xxl">
+        <div className="container-max px-4">
            <div className="text-center mt-8 mb-12 wow animate__animated animate__fadeInUp" data-wow-duration="1s">
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">What We Offer</h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
@@ -173,8 +173,8 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="bg-gradient-to-br from-primary to-secondary rounded-lg p-8 text-white">
-                <Image src="/images/pexels-artempodrez-5716031.jpg" alt="Planning & Consultation Icon" width={600} height={100} className='object-cover h-60 rounded-lg'/>
+              <div className="bg-gradient-to-br from-primary to-secondary rounded-lg p-6 sm:p-8 text-white">
+                <Image src="/images/pexels-artempodrez-5716031.jpg" alt="Planning & Consultation Icon" width={600} height={100} className='w-full object-cover h-60 rounded-lg'/>
 
                 <h3 className="text-2xl font-bold my-4">Ready to Get Started?</h3>
                 <p className="mb-6">

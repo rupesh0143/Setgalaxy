@@ -239,7 +239,7 @@ export default function ServiceDetail({ params }: { params: { slug: string } }) 
                     alt={`${service.title} Process`}
                     width={600}
                     height={400}
-                    className="rounded-lg shadow-lg"
+                    className="w-full h-auto object-cover rounded-lg shadow-lg"
                   />
                 </div>
               </div>
